@@ -20,5 +20,5 @@ def sumaDeFilas(matriz, filaS, filaC, constante):
     matriz[filaS]=fila1
     return matriz
 
-#FIX ME: no se si es necesario ajustar al numero de filas por iniciar en 0
+#FIX ME: no se si es necesario ajustar al numero de filas por iniciar en 0 <--- LOL
 
