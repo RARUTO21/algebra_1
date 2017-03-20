@@ -519,3 +519,12 @@ class Ui_TareaAlgebra(object):
         self.nuevaMatrizButt.setText(_translate("TareaAlgebra", "Nueva Matriz"))
         self.sResutadosButt.setText(_translate("TareaAlgebra", "Secuencia de Resultados"))
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    TareaAlgebra = QtWidgets.QMainWindow()
+    ui = Ui_TareaAlgebra()
+    ui.setupUi(TareaAlgebra)
+    TareaAlgebra.show()
+    sys.exit(app.exec_())
