@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>539</width>
-    <height>639</height>
+    <width>524</width>
+    <height>551</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,7 +39,7 @@
       <string>2</string>
      </property>
      <property name="checked">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="QRadioButton" name="filas3">
@@ -80,6 +80,9 @@
      <property name="text">
       <string>5</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="ColumnasGroupBox">
@@ -107,7 +110,7 @@
       <string>2</string>
      </property>
      <property name="checked">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="QRadioButton" name="col3">
@@ -148,1052 +151,1350 @@
      <property name="text">
       <string>5</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="MatrizGropBox">
+   <widget class="QPushButton" name="nuevaMatrizButt">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>0</y>
-      <width>301</width>
-      <height>111</height>
+      <x>20</x>
+      <y>440</y>
+      <width>141</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nueva Matriz</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sResutadosButt">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>480</y>
+      <width>141</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Secuencia de Resultados</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="FIL1COL1">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>51</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="title">
-     <string>Fila 1</string>
+     <string>FIL1 COL1</string>
     </property>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="DEMF1C1">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>31</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>80</y>
+       <x>10</x>
+       <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_5">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_6">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_7">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_8">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_9">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_10">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>56</y>
+       <x>10</x>
+       <y>45</y>
        <width>31</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="Line" name="line_2">
+    <widget class="QLineEdit" name="NUMF1C1">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>60</y>
+       <x>10</x>
+       <y>30</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>0</string>
      </property>
     </widget>
-    <widget class="Line" name="line_3">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>60</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_4">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>60</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_5">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>60</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
+    <zorder>DEMF1C1</zorder>
+    <zorder>NUMF1C1</zorder>
+    <zorder>line</zorder>
+    <zorder>DEMF1C1</zorder>
+    <zorder>line</zorder>
+    <zorder>NUMF1C1</zorder>
    </widget>
-   <widget class="QGroupBox" name="MatrizGropBox_2">
+   <widget class="QGroupBox" name="FIL1COL2">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>120</y>
-      <width>301</width>
-      <height>111</height>
+      <x>270</x>
+      <y>10</y>
+      <width>51</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="title">
-     <string>Fila 2</string>
+     <string>FIL1 COL2</string>
     </property>
-    <widget class="QLineEdit" name="lineEdit_11">
+    <widget class="QLineEdit" name="DEMF1C2">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>31</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_12">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_13">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_14">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_15">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_16">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_17">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_18">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_19">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_20">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="Line" name="line_6">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>56</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_7">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_8">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>60</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_9">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>60</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_10">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>60</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="MatrizGropBox_3">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>240</y>
-      <width>301</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Fila 3</string>
-    </property>
-    <widget class="QLineEdit" name="lineEdit_21">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>31</width>
-       <height>21</height>
-      </rect>
-     </property>
      <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_22">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_23">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_24">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_25">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_26">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_27">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_28">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_29">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_30">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="Line" name="line_11">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>56</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_12">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF1C2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL1COL3">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>10</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL1 COL3</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF1C3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_13">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF1C3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL1COL4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>10</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL1 COL4</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF1C4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_14">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF1C4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL1COL5">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>10</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL1 COL5</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF1C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_15">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>60</y>
+       <x>10</x>
+       <y>45</y>
        <width>31</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
+    <widget class="QLineEdit" name="NUMF1C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QGroupBox" name="MatrizGropBox_4">
+   <widget class="QGroupBox" name="FIL2COL1">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>480</y>
-      <width>301</width>
-      <height>111</height>
+      <x>210</x>
+      <y>110</y>
+      <width>51</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="title">
-     <string>Fila 5</string>
+     <string>FIL2 COL1</string>
     </property>
-    <widget class="QLineEdit" name="lineEdit_41">
+    <widget class="QLineEdit" name="DEMF2C1">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>31</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_42">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>80</y>
+       <x>10</x>
+       <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>1</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_43">
+    <widget class="Line" name="line_16">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>30</y>
+       <x>10</x>
+       <y>45</y>
        <width>31</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
-     <property name="text">
-      <string/>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_44">
+    <widget class="QLineEdit" name="NUMF2C1">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_45">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
+       <x>10</x>
        <y>30</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>0</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_46">
+   </widget>
+   <widget class="QGroupBox" name="FIL2COL2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>110</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL2 COL2</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF2C2">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>80</y>
+       <x>10</x>
+       <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>1</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_47">
+    <widget class="Line" name="line_17">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF2C2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>30</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>0</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_48">
+   </widget>
+   <widget class="QGroupBox" name="FIL2COL3">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>110</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL2 COL3</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF2C3">
      <property name="geometry">
       <rect>
-       <x>200</x>
-       <y>80</y>
+       <x>10</x>
+       <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>1</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_49">
+    <widget class="Line" name="line_18">
      <property name="geometry">
       <rect>
-       <x>260</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF2C3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>30</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>0</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_50">
+   </widget>
+   <widget class="QGroupBox" name="FIL2COL4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>110</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL2 COL4</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF2C4">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>80</y>
+       <x>10</x>
+       <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_19">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF2C4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL2COL5">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>110</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL2 COL5</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF2C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_20">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF2C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL3COL1">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>210</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL3 COL1</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF3C1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_21">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>56</y>
+       <x>10</x>
+       <y>45</y>
        <width>31</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF3C1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL3COL2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>210</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL3 COL2</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF3C2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_22">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF3C2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL3COL3">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>210</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL3 COL3</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF3C3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_23">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF3C3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL3COL4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>210</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL3 COL4</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF3C4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_24">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF3C4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL3COL5">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>210</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL3 COL5</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF3C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_25">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>60</y>
+       <x>10</x>
+       <y>45</y>
        <width>31</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
+    <widget class="QLineEdit" name="NUMF3C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QGroupBox" name="MatrizGropBox_5">
+   <widget class="QGroupBox" name="FIL4COL1">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>360</y>
-      <width>301</width>
-      <height>111</height>
+      <x>210</x>
+      <y>310</y>
+      <width>51</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="title">
-     <string>Fila 4</string>
+     <string>FIL4 COL1</string>
     </property>
-    <widget class="QLineEdit" name="lineEdit_51">
+    <widget class="QLineEdit" name="DEMF4C1">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>31</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_52">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>80</y>
+       <x>10</x>
+       <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
      <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_53">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_54">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_55">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_56">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_57">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_58">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_59">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>30</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_60">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>80</y>
-       <width>31</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_26">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>56</y>
+       <x>10</x>
+       <y>45</y>
        <width>31</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF4C1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL4COL2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>310</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL4 COL2</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF4C2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_27">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF4C2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL4COL3">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>310</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL4 COL3</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF4C3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_28">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF4C3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL4COL4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>310</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL4 COL4</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF4C4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_29">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF4C4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL4COL5">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>310</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL4 COL5</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF4C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
        <y>60</y>
        <width>31</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string>1</string>
      </property>
     </widget>
     <widget class="Line" name="line_30">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>60</y>
+       <x>10</x>
+       <y>45</y>
        <width>31</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
+    <widget class="QLineEdit" name="NUMF4C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="FIL5COL1">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>210</x>
+      <y>410</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL5 COL1</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF5C1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_31">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF5C1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL5COL2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>410</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL5 COL2</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF5C2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_32">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF5C2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL5COL3">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>410</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL5 COL3</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF5C3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_33">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF5C3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL5COL4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>410</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL5 COL4</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF5C4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_34">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF5C4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FIL5COL5">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>410</y>
+      <width>51</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>FIL5 COL5</string>
+    </property>
+    <widget class="QLineEdit" name="DEMF5C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_35">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NUMF5C5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="OperacionesElementalesGrupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
       <y>90</y>
       <width>181</width>
       <height>331</height>
@@ -1261,7 +1562,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="QGroupBox" name="groupBox_27">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1351,7 +1652,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_4">
+    <widget class="QGroupBox" name="groupBox_28">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1483,40 +1784,14 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QPushButton" name="nuevaMatrizButt">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>440</y>
-      <width>141</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nueva Matriz</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="sResutadosButt">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>480</y>
-      <width>141</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Secuencia de Resultados</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>539</width>
-     <height>21</height>
+     <width>524</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>
