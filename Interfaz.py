@@ -499,8 +499,11 @@ class Ui_TareaAlgebra(object):
         TareaAlgebra.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(TareaAlgebra)
         self.statusbar.setObjectName("statusbar")
+        self.sResutadosButt.setEnabled(False)
+        self.RealizarTipoA.setEnabled(False)
+        self.RealizarTipoB.setEnabled(False)
+        self.RealizarTipoC.setEnabled(False)
         TareaAlgebra.setStatusBar(self.statusbar)
-
         self.retranslateUi(TareaAlgebra)
         QtCore.QMetaObject.connectSlotsByName(TareaAlgebra)
         self.home()
@@ -647,6 +650,15 @@ class Ui_TareaAlgebra(object):
             while (tmp < 5):
                 matriz[i][tmp].setEnabled(False)
                 tmp+=1
+        self.nuevaMatrizButt.setEnabled(False)
+        self.nuevaMatrizButt.setText("Nueva Matriz")
+        self.RealizarTipoA.setEnabled(True)
+        self.RealizarTipoB.setEnabled(True)
+        self.RealizarTipoC.setEnabled(True)
+        self.FilasGroupBox.setEnabled(False)
+        self.ColumnasGroupBox.setEnabled(False)
+        print
+
 
     def home(self):
         self.matrizEnInterfaz = [[self.FIL1COL1,self.FIL1COL2,self.FIL1COL3,self.FIL1COL4,self.FIL1COL5],
