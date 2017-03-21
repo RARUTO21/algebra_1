@@ -9,6 +9,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_TareaAlgebra(object):
+
+    matrizEnInterfaz = []
+
     def setupUi(self, TareaAlgebra):
         TareaAlgebra.setObjectName("TareaAlgebra")
         TareaAlgebra.resize(524, 551)
@@ -500,6 +503,7 @@ class Ui_TareaAlgebra(object):
 
         self.retranslateUi(TareaAlgebra)
         QtCore.QMetaObject.connectSlotsByName(TareaAlgebra)
+        self.home()
 
     def retranslateUi(self, TareaAlgebra):
         _translate = QtCore.QCoreApplication.translate
@@ -514,81 +518,81 @@ class Ui_TareaAlgebra(object):
         self.col3.setText(_translate("TareaAlgebra", "3"))
         self.col4.setText(_translate("TareaAlgebra", "4"))
         self.col5.setText(_translate("TareaAlgebra", "5"))
-        self.nuevaMatrizButt.setText(_translate("TareaAlgebra", "Nueva Matriz"))
+        self.nuevaMatrizButt.setText(_translate("TareaAlgebra", "Crear Matriz"))
         self.sResutadosButt.setText(_translate("TareaAlgebra", "Secuencia de Resultados"))
-        self.FIL1COL1.setTitle(_translate("TareaAlgebra", "FIL1 COL1"))
+        self.FIL1COL1.setTitle(_translate("TareaAlgebra", "FIL1COL1"))
         self.DEMF1C1.setText(_translate("TareaAlgebra", "1"))
         self.NUMF1C1.setText(_translate("TareaAlgebra", "0"))
-        self.FIL1COL2.setTitle(_translate("TareaAlgebra", "FIL1 COL2"))
+        self.FIL1COL2.setTitle(_translate("TareaAlgebra", "FIL1COL2"))
         self.DEMF1C2.setText(_translate("TareaAlgebra", "1"))
         self.NUMF1C2.setText(_translate("TareaAlgebra", "0"))
-        self.FIL1COL3.setTitle(_translate("TareaAlgebra", "FIL1 COL3"))
+        self.FIL1COL3.setTitle(_translate("TareaAlgebra", "FIL1COL3"))
         self.DEMF1C3.setText(_translate("TareaAlgebra", "1"))
         self.NUMF1C3.setText(_translate("TareaAlgebra", "0"))
-        self.FIL1COL4.setTitle(_translate("TareaAlgebra", "FIL1 COL4"))
+        self.FIL1COL4.setTitle(_translate("TareaAlgebra", "FIL1COL4"))
         self.DEMF1C4.setText(_translate("TareaAlgebra", "1"))
         self.NUMF1C4.setText(_translate("TareaAlgebra", "0"))
-        self.FIL1COL5.setTitle(_translate("TareaAlgebra", "FIL1 COL5"))
+        self.FIL1COL5.setTitle(_translate("TareaAlgebra", "FIL1COL5"))
         self.DEMF1C5.setText(_translate("TareaAlgebra", "1"))
         self.NUMF1C5.setText(_translate("TareaAlgebra", "0"))
-        self.FIL2COL1.setTitle(_translate("TareaAlgebra", "FIL2 COL1"))
+        self.FIL2COL1.setTitle(_translate("TareaAlgebra", "FIL2COL1"))
         self.DEMF2C1.setText(_translate("TareaAlgebra", "1"))
         self.NUMF2C1.setText(_translate("TareaAlgebra", "0"))
-        self.FIL2COL2.setTitle(_translate("TareaAlgebra", "FIL2 COL2"))
+        self.FIL2COL2.setTitle(_translate("TareaAlgebra", "FIL2COL2"))
         self.DEMF2C2.setText(_translate("TareaAlgebra", "1"))
         self.NUMF2C2.setText(_translate("TareaAlgebra", "0"))
-        self.FIL2COL3.setTitle(_translate("TareaAlgebra", "FIL2 COL3"))
+        self.FIL2COL3.setTitle(_translate("TareaAlgebra", "FIL2COL3"))
         self.DEMF2C3.setText(_translate("TareaAlgebra", "1"))
         self.NUMF2C3.setText(_translate("TareaAlgebra", "0"))
-        self.FIL2COL4.setTitle(_translate("TareaAlgebra", "FIL2 COL4"))
+        self.FIL2COL4.setTitle(_translate("TareaAlgebra", "FIL2COL4"))
         self.DEMF2C4.setText(_translate("TareaAlgebra", "1"))
         self.NUMF2C4.setText(_translate("TareaAlgebra", "0"))
-        self.FIL2COL5.setTitle(_translate("TareaAlgebra", "FIL2 COL5"))
+        self.FIL2COL5.setTitle(_translate("TareaAlgebra", "FIL2COL5"))
         self.DEMF2C5.setText(_translate("TareaAlgebra", "1"))
         self.NUMF2C5.setText(_translate("TareaAlgebra", "0"))
-        self.FIL3COL1.setTitle(_translate("TareaAlgebra", "FIL3 COL1"))
+        self.FIL3COL1.setTitle(_translate("TareaAlgebra", "FIL3COL1"))
         self.DEMF3C1.setText(_translate("TareaAlgebra", "1"))
         self.NUMF3C1.setText(_translate("TareaAlgebra", "0"))
-        self.FIL3COL2.setTitle(_translate("TareaAlgebra", "FIL3 COL2"))
+        self.FIL3COL2.setTitle(_translate("TareaAlgebra", "FIL3COL2"))
         self.DEMF3C2.setText(_translate("TareaAlgebra", "1"))
         self.NUMF3C2.setText(_translate("TareaAlgebra", "0"))
-        self.FIL3COL3.setTitle(_translate("TareaAlgebra", "FIL3 COL3"))
+        self.FIL3COL3.setTitle(_translate("TareaAlgebra", "FIL3COL3"))
         self.DEMF3C3.setText(_translate("TareaAlgebra", "1"))
         self.NUMF3C3.setText(_translate("TareaAlgebra", "0"))
-        self.FIL3COL4.setTitle(_translate("TareaAlgebra", "FIL3 COL4"))
+        self.FIL3COL4.setTitle(_translate("TareaAlgebra", "FIL3COL4"))
         self.DEMF3C4.setText(_translate("TareaAlgebra", "1"))
         self.NUMF3C4.setText(_translate("TareaAlgebra", "0"))
-        self.FIL3COL5.setTitle(_translate("TareaAlgebra", "FIL3 COL5"))
+        self.FIL3COL5.setTitle(_translate("TareaAlgebra", "FIL3COL5"))
         self.DEMF3C5.setText(_translate("TareaAlgebra", "1"))
         self.NUMF3C5.setText(_translate("TareaAlgebra", "0"))
-        self.FIL4COL1.setTitle(_translate("TareaAlgebra", "FIL4 COL1"))
+        self.FIL4COL1.setTitle(_translate("TareaAlgebra", "FIL4COL1"))
         self.DEMF4C1.setText(_translate("TareaAlgebra", "1"))
         self.NUMF4C1.setText(_translate("TareaAlgebra", "0"))
-        self.FIL4COL2.setTitle(_translate("TareaAlgebra", "FIL4 COL2"))
+        self.FIL4COL2.setTitle(_translate("TareaAlgebra", "FIL4COL2"))
         self.DEMF4C2.setText(_translate("TareaAlgebra", "1"))
         self.NUMF4C2.setText(_translate("TareaAlgebra", "0"))
-        self.FIL4COL3.setTitle(_translate("TareaAlgebra", "FIL4 COL3"))
+        self.FIL4COL3.setTitle(_translate("TareaAlgebra", "FIL4COL3"))
         self.DEMF4C3.setText(_translate("TareaAlgebra", "1"))
         self.NUMF4C3.setText(_translate("TareaAlgebra", "0"))
-        self.FIL4COL4.setTitle(_translate("TareaAlgebra", "FIL4 COL4"))
+        self.FIL4COL4.setTitle(_translate("TareaAlgebra", "FIL4COL4"))
         self.DEMF4C4.setText(_translate("TareaAlgebra", "1"))
         self.NUMF4C4.setText(_translate("TareaAlgebra", "0"))
-        self.FIL4COL5.setTitle(_translate("TareaAlgebra", "FIL4 COL5"))
+        self.FIL4COL5.setTitle(_translate("TareaAlgebra", "FIL4COL5"))
         self.DEMF4C5.setText(_translate("TareaAlgebra", "1"))
         self.NUMF4C5.setText(_translate("TareaAlgebra", "0"))
-        self.FIL5COL1.setTitle(_translate("TareaAlgebra", "FIL5 COL1"))
+        self.FIL5COL1.setTitle(_translate("TareaAlgebra", "FIL5COL1"))
         self.DEMF5C1.setText(_translate("TareaAlgebra", "1"))
         self.NUMF5C1.setText(_translate("TareaAlgebra", "0"))
-        self.FIL5COL2.setTitle(_translate("TareaAlgebra", "FIL5 COL2"))
+        self.FIL5COL2.setTitle(_translate("TareaAlgebra", "FIL5COL2"))
         self.DEMF5C2.setText(_translate("TareaAlgebra", "1"))
         self.NUMF5C2.setText(_translate("TareaAlgebra", "0"))
-        self.FIL5COL3.setTitle(_translate("TareaAlgebra", "FIL5 COL3"))
+        self.FIL5COL3.setTitle(_translate("TareaAlgebra", "FIL5COL3"))
         self.DEMF5C3.setText(_translate("TareaAlgebra", "1"))
         self.NUMF5C3.setText(_translate("TareaAlgebra", "0"))
-        self.FIL5COL4.setTitle(_translate("TareaAlgebra", "FIL5 COL4"))
+        self.FIL5COL4.setTitle(_translate("TareaAlgebra", "FIL5COL4"))
         self.DEMF5C4.setText(_translate("TareaAlgebra", "1"))
         self.NUMF5C4.setText(_translate("TareaAlgebra", "0"))
-        self.FIL5COL5.setTitle(_translate("TareaAlgebra", "FIL5 COL5"))
+        self.FIL5COL5.setTitle(_translate("TareaAlgebra", "FIL5COL5"))
         self.DEMF5C5.setText(_translate("TareaAlgebra", "1"))
         self.NUMF5C5.setText(_translate("TareaAlgebra", "0"))
         self.OperacionesElementalesGrupBox.setTitle(_translate("TareaAlgebra", "Operaciones Elementales"))
@@ -607,6 +611,52 @@ class Ui_TareaAlgebra(object):
         self.label_8.setText(_translate("TareaAlgebra", "*"))
         self.label_9.setText(_translate("TareaAlgebra", "+"))
         self.RealizarTipoC.setText(_translate("TareaAlgebra", "Realizar"))
+
+    def resetMatriz(self):
+        for fila in self.matrizEnInterfaz:
+            for columna in fila:
+                columna.setEnabled(True)
+
+    def setEnableMatriz(self):
+        self.resetMatriz()
+        matriz = self.matrizEnInterfaz
+        numCol = 5
+        numFil = 5
+        if (self.col2.isChecked()):
+            numCol = 2
+        elif (self.col3.isChecked()):
+            numCol = 3
+        elif (self.col4.isChecked()):
+            numCol = 4
+        else:
+            pass
+        if (self.filas2.isChecked()):
+            numFil = 2
+        elif (self.filas3.isChecked()):
+            numFil = 3
+        elif (self.filas4.isChecked()):
+            numFil = 4
+        else:
+            pass
+        while (numFil < 5):
+            for i in range(0, 5):
+                matriz[numFil][i].setEnabled(False)
+            numFil += 1
+        for i in range(0, 5):
+            tmp = numCol
+            while (tmp < 5):
+                matriz[i][tmp].setEnabled(False)
+                tmp+=1
+
+    def home(self):
+        self.matrizEnInterfaz = [[self.FIL1COL1,self.FIL1COL2,self.FIL1COL3,self.FIL1COL4,self.FIL1COL5],
+                            [self.FIL2COL1,self.FIL2COL2,self.FIL2COL3,self.FIL2COL4,self.FIL2COL5],
+                            [self.FIL3COL1,self.FIL3COL2,self.FIL3COL3,self.FIL3COL4,self.FIL3COL5],
+                            [self.FIL4COL1,self.FIL4COL2,self.FIL4COL3,self.FIL4COL4,self.FIL4COL5],
+                            [self.FIL5COL1,self.FIL5COL2,self.FIL5COL3,self.FIL5COL4,self.FIL5COL5]]
+
+        self.nuevaMatrizButt.clicked.connect(self.setEnableMatriz)
+
 
 
 if __name__ == "__main__":
