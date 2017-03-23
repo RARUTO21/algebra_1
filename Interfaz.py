@@ -635,6 +635,7 @@ class Ui_TareaAlgebra(object):
         self.label_10.setText(_translate("TareaAlgebra", "-"))
         self.RealizarTipoC.setText(_translate("TareaAlgebra", "Realizar"))
 
+
     def resetMatriz(self):
         for fila in self.matrizEnInterfaz:
             for columna in fila:
@@ -696,12 +697,23 @@ class Ui_TareaAlgebra(object):
                 print(int(tmp[2].text()),int(tmp[0].text()))
                 self.matrizReal[i].insert(j, Fraction(int(tmp[2].text()),int(tmp[0].text())))
 
+    def actualizarMatrizUI(self,matriz):
+        for i in range(0,self.filas):
+            for j in range(0,self.columnas):
+                tmp = self.matrizActiva[i][j].children()
+                num = Fraction(matriz[i][j])
+                tmp[2].setText(str(num.numerator))
+                tmp[0].setText(str(num.denominator))
+
+
     def tipoA(self):
         self.generarMatrizReal()
         filaCambio1 = int(self.filaA1.text())
         filaCambio2 = int(self.filaA2.text())
         self.matrizReal = intercambiarFilas(self.matrizReal, filaCambio1, filaCambio2)
         print(self.matrizReal)
+        self.actualizarMatrizUI(self.matrizReal)
+
 
 
 
@@ -717,6 +729,7 @@ class Ui_TareaAlgebra(object):
         self.RealizarTipoA.clicked.connect(self.tipoA)
         self.RealizarTipoB.clicked.connect(self.setEnableMatriz)
         self.RealizarTipoC.clicked.connect(self.setEnableMatriz)
+
 
 if __name__ == "__main__":
     import sys
