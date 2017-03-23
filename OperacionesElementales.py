@@ -1,7 +1,13 @@
+from claseOperacionElemental import *
+
+from crearSecuenciaResultados import *
+
 def intercambiarFilas(matriz, fila1, fila2):
+    op = TipoA(fila1,fila2)
     tmp1 = matriz[fila1]
     matriz[fila1]=matriz[fila2]
     matriz[fila2]=tmp1
+    guardarResultados(matriz, op)
     return matriz
 
 def multiplicarPorConstante(matriz, filaC, constante):

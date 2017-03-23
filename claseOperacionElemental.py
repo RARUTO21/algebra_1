@@ -1,21 +1,20 @@
 class TipoA:
-    def __init__(self, tipo):
-        if(tipo == 1):
+    def __init__(self, f1, f2):
             self.nombre = "Tipo A"
-            self.filaA = 0
-            self.filaB = 0
+            self.filaA = f1
+            self.filaB = f2
 
 
 class TipoB:
-    def __init__(self):
+    def __init__(self, f1, c1):
             self.nombre = "Tipo B"
-            self.filaC = 0
-            self.constanteA = 0
+            self.filaC = f1
+            self.constanteA = c1
 
 
 class TipoC:
-    def __init__(self):
+    def __init__(self, f1, f2, c1):
             self.nombre = "Tipo C"
-            self.filaD = 0
-            self.filaE = 0
-            self.constanteB = 0
+            self.filaD = f1
+            self.filaE = f2
+            self.constanteB = c1

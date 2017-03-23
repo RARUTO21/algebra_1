@@ -12,6 +12,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 from OperacionesElementales import *
 
+from crearSecuenciaResultados import *
+
 
 class Ui_TareaAlgebra(object):
 
@@ -700,6 +702,8 @@ class Ui_TareaAlgebra(object):
         filaCambio2 = int(self.filaA2.text())
         self.matrizReal = intercambiarFilas(self.matrizReal, filaCambio1, filaCambio2)
         print(self.matrizReal)
+
+
 
 
     def home(self):
