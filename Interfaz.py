@@ -6,11 +6,20 @@
 #
 # WARNING! All changes made in this file will be lost!
 
+from fractions import Fraction
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
+from OperacionesElementales import *
+
 
 class Ui_TareaAlgebra(object):
 
     matrizEnInterfaz = []
+    matrizActiva = []
+    matrizReal = []
+    filas = 5
+    columnas = 5
 
     def setupUi(self, TareaAlgebra):
         TareaAlgebra.setObjectName("TareaAlgebra")
@@ -480,6 +489,14 @@ class Ui_TareaAlgebra(object):
         font.setPointSize(18)
         self.label_9.setFont(font)
         self.label_9.setObjectName("label_9")
+        #
+        self.label_10 = QtWidgets.QLabel(self.groupBox_28)
+        self.label_10.setGeometry(QtCore.QRect(42, 50, 50, 25))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.label_10.setFont(font)
+        self.label_10.setObjectName("label_10")
+        #
         self.filaC1 = QtWidgets.QLineEdit(self.groupBox_28)
         self.filaC1.setGeometry(QtCore.QRect(10, 40, 21, 20))
         self.filaC1.setObjectName("filaC1")
@@ -510,7 +527,7 @@ class Ui_TareaAlgebra(object):
 
     def retranslateUi(self, TareaAlgebra):
         _translate = QtCore.QCoreApplication.translate
-        TareaAlgebra.setWindowTitle(_translate("TareaAlgebra", "MainWindow"))
+        TareaAlgebra.setWindowTitle(_translate("TareaAlgebra", "Tarea Programada Parte1"))
         self.FilasGroupBox.setTitle(_translate("TareaAlgebra", "Filas"))
         self.filas2.setText(_translate("TareaAlgebra", "2"))
         self.filas3.setText(_translate("TareaAlgebra", "3"))
@@ -613,6 +630,7 @@ class Ui_TareaAlgebra(object):
         self.label_7.setText(_translate("TareaAlgebra", "Constante"))
         self.label_8.setText(_translate("TareaAlgebra", "*"))
         self.label_9.setText(_translate("TareaAlgebra", "+"))
+        self.label_10.setText(_translate("TareaAlgebra", "-"))
         self.RealizarTipoC.setText(_translate("TareaAlgebra", "Realizar"))
 
     def resetMatriz(self):
@@ -641,6 +659,8 @@ class Ui_TareaAlgebra(object):
             numFil = 4
         else:
             pass
+        self.filas = numFil
+        self.columnas = numCol
         while (numFil < 5):
             for i in range(0, 5):
                 matriz[numFil][i].setEnabled(False)
@@ -650,26 +670,49 @@ class Ui_TareaAlgebra(object):
             while (tmp < 5):
                 matriz[i][tmp].setEnabled(False)
                 tmp+=1
-        self.nuevaMatrizButt.setEnabled(False)
+        #self.nuevaMatrizButt.setEnabled(False)
         self.nuevaMatrizButt.setText("Nueva Matriz")
         self.RealizarTipoA.setEnabled(True)
         self.RealizarTipoB.setEnabled(True)
         self.RealizarTipoC.setEnabled(True)
-        self.FilasGroupBox.setEnabled(False)
-        self.ColumnasGroupBox.setEnabled(False)
-        print
+        #self.FilasGroupBox.setEnabled(False)
+        #self.ColumnasGroupBox.setEnabled(False)
+        self.setMatrizActiva()
+
+    def setMatrizActiva(self):
+        for i in range(0, self.filas):
+            self.matrizActiva.insert(i,[])
+            self.matrizReal.insert(i,[])
+            for j in range(0, self.columnas):
+                self.matrizActiva[i].insert(j, self.matrizEnInterfaz[i][j])
+
+    def generarMatrizReal(self):
+        self.matrizReal
+        for i in range(0,self.filas):
+            for j in range(0,self.columnas):
+                tmp = self.matrizActiva[i][j].children()
+                print(int(tmp[2].text()),int(tmp[0].text()))
+                self.matrizReal[i].insert(j, Fraction(int(tmp[2].text()),int(tmp[0].text())))
+
+    def tipoA(self):
+        self.generarMatrizReal()
+        filaCambio1 = int(self.filaA1.text())
+        filaCambio2 = int(self.filaA2.text())
+        self.matrizReal = intercambiarFilas(self.matrizReal, filaCambio1, filaCambio2)
+        print(self.matrizReal)
 
 
     def home(self):
+        self.FIL1COL1.children()
         self.matrizEnInterfaz = [[self.FIL1COL1,self.FIL1COL2,self.FIL1COL3,self.FIL1COL4,self.FIL1COL5],
                             [self.FIL2COL1,self.FIL2COL2,self.FIL2COL3,self.FIL2COL4,self.FIL2COL5],
                             [self.FIL3COL1,self.FIL3COL2,self.FIL3COL3,self.FIL3COL4,self.FIL3COL5],
                             [self.FIL4COL1,self.FIL4COL2,self.FIL4COL3,self.FIL4COL4,self.FIL4COL5],
                             [self.FIL5COL1,self.FIL5COL2,self.FIL5COL3,self.FIL5COL4,self.FIL5COL5]]
-
         self.nuevaMatrizButt.clicked.connect(self.setEnableMatriz)
-
-
+        self.RealizarTipoA.clicked.connect(self.tipoA)
+        self.RealizarTipoB.clicked.connect(self.setEnableMatriz)
+        self.RealizarTipoC.clicked.connect(self.setEnableMatriz)
 
 if __name__ == "__main__":
     import sys
