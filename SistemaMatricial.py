@@ -45,7 +45,7 @@ def convertMatrixToList(matriz):
     return result
 
 
-def imprimir(m):
-    for i in range(0, len(m)):
-        print("Fila: ", i, " valor: ", m[i])
+def imprimir(x):
+    for i in range(0, len(x)):
+        print("Fila: ", i, " valor: ", x[i])
 
