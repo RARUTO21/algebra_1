@@ -708,6 +708,7 @@ class Ui_TareaAlgebra(object):
                 tmp[0].setText(str(num.denominator))
 
 
+
     def tipoA(self):
         self.generarMatrizReal()
         filaCambio1 = int(self.filaA1.text())
