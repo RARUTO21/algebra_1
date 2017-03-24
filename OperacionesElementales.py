@@ -15,7 +15,6 @@ def multiplicarPorConstante(matriz, filaC, constante):
     fila = matriz[filaC]
     for i in range(0,len(fila)):
         fila[i] = fila[i]*constante
-    print(fila)
     matriz[filaC] = fila
     guardarResultados(matriz, op)
     return matriz

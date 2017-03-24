@@ -690,7 +690,9 @@ class Ui_TareaAlgebra(object):
                 self.matrizActiva[i].insert(j, self.matrizEnInterfaz[i][j])
 
     def generarMatrizReal(self):
-        self.matrizReal
+        self.matrizReal = []
+        for i in range(0, self.filas):
+            self.matrizReal.insert(i,[])
         for i in range(0,self.filas):
             for j in range(0,self.columnas):
                 tmp = self.matrizActiva[i][j].children()
@@ -711,7 +713,6 @@ class Ui_TareaAlgebra(object):
         filaCambio1 = int(self.filaA1.text())
         filaCambio2 = int(self.filaA2.text())
         self.matrizReal = intercambiarFilas(self.matrizReal, filaCambio1, filaCambio2)
-        print(self.matrizReal)
         self.actualizarMatrizUI(self.matrizReal)
 
 

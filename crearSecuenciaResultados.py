@@ -23,3 +23,7 @@ def guardarResultados(matriz, operacionElemental):
     else:
         tmp+="[[-1]] Error"
     writeToFile(tmp)
+
+def matrizToString(matriz):
+    tmp = str(matriz)
+    return tmp
