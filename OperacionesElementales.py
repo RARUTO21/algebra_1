@@ -1,5 +1,3 @@
-from claseOperacionElemental import *
-
 from crearSecuenciaResultados import *
 
 def intercambiarFilas(matriz, fila1, fila2):
@@ -28,6 +26,3 @@ def sumaDeFilas(matriz, filaS, filaC, constante):
     matriz[filaS]=fila1
     guardarResultados(matriz, op)
     return matriz
-
-#FIX ME: no se si es necesario ajustar al numero de filas por iniciar en 0 <--- LOL
-
