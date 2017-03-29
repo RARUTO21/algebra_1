@@ -1,5 +1,3 @@
-from claseOperacionElemental import *
-
 from crearSecuenciaResultados import *
 
 def intercambiarFilas(matriz, fila1, fila2):
@@ -15,7 +13,6 @@ def multiplicarPorConstante(matriz, filaC, constante):
     fila = matriz[filaC]
     for i in range(0,len(fila)):
         fila[i] = fila[i]*constante
-    print(fila)
     matriz[filaC] = fila
     guardarResultados(matriz, op)
     return matriz
@@ -29,6 +26,3 @@ def sumaDeFilas(matriz, filaS, filaC, constante):
     matriz[filaS]=fila1
     guardarResultados(matriz, op)
     return matriz
-
-#FIX ME: no se si es necesario ajustar al numero de filas por iniciar en 0 <--- LOL
-

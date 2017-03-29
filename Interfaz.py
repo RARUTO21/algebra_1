@@ -8,11 +8,10 @@
 
 from fractions import Fraction
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5.QtWidgets import *
 
 from OperacionesElementales import *
-
-from crearSecuenciaResultados import *
 
 
 class Ui_TareaAlgebra(object):
@@ -636,13 +635,13 @@ class Ui_TareaAlgebra(object):
         self.RealizarTipoC.setText(_translate("TareaAlgebra", "Realizar"))
 
 
-    def resetMatriz(self):
+    def resetMatriz(self, bool):
         for fila in self.matrizEnInterfaz:
             for columna in fila:
-                columna.setEnabled(True)
+                columna.setEnabled(bool)
 
     def setEnableMatriz(self):
-        self.resetMatriz()
+        self.resetMatriz(True)
         matriz = self.matrizEnInterfaz
         numCol = 5
         numFil = 5
@@ -673,13 +672,13 @@ class Ui_TareaAlgebra(object):
             while (tmp < 5):
                 matriz[i][tmp].setEnabled(False)
                 tmp+=1
-        #self.nuevaMatrizButt.setEnabled(False)
+        self.nuevaMatrizButt.setEnabled(False)
         self.nuevaMatrizButt.setText("Nueva Matriz")
         self.RealizarTipoA.setEnabled(True)
         self.RealizarTipoB.setEnabled(True)
         self.RealizarTipoC.setEnabled(True)
-        #self.FilasGroupBox.setEnabled(False)
-        #self.ColumnasGroupBox.setEnabled(False)
+        self.FilasGroupBox.setEnabled(False)
+        self.ColumnasGroupBox.setEnabled(False)
         self.setMatrizActiva()
 
     def setMatrizActiva(self):
@@ -690,14 +689,16 @@ class Ui_TareaAlgebra(object):
                 self.matrizActiva[i].insert(j, self.matrizEnInterfaz[i][j])
 
     def generarMatrizReal(self):
-        self.matrizReal
+        self.matrizReal = []
+        for i in range(0, self.filas):
+            self.matrizReal.insert(i,[])
         for i in range(0,self.filas):
             for j in range(0,self.columnas):
                 tmp = self.matrizActiva[i][j].children()
                 print(int(tmp[2].text()),int(tmp[0].text()))
                 self.matrizReal[i].insert(j, Fraction(int(tmp[2].text()),int(tmp[0].text())))
 
-    def actualizarMatrizUI(self,matriz):
+    def actualizarMatrizUI(self, matriz):
         for i in range(0,self.filas):
             for j in range(0,self.columnas):
                 tmp = self.matrizActiva[i][j].children()
@@ -705,18 +706,40 @@ class Ui_TareaAlgebra(object):
                 tmp[2].setText(str(num.numerator))
                 tmp[0].setText(str(num.denominator))
 
-
     def tipoA(self):
-        self.generarMatrizReal()
-        filaCambio1 = int(self.filaA1.text())
-        filaCambio2 = int(self.filaA2.text())
-        self.matrizReal = intercambiarFilas(self.matrizReal, filaCambio1, filaCambio2)
-        print(self.matrizReal)
-        self.actualizarMatrizUI(self.matrizReal)
+        try:
+            self.resetMatriz(False)
+            self.nuevaMatrizButt.setEnabled(True)
+            self.FilasGroupBox.setEnabled(True)
+            self.ColumnasGroupBox.setEnabled(True)
+            self.generarMatrizReal()
+            filaCambio1 = int(self.filaA1.text())-1
+            filaCambio2 = int(self.filaA2.text())-1
+            self.matrizReal = intercambiarFilas(self.matrizReal, filaCambio1, filaCambio2)
+            self.actualizarMatrizUI(self.matrizReal)
+        except:
+            self.showMessageBox("Error", "Imposible realizar")
 
+    def tipoB(self):
+        try:
+            self.resetMatriz(False)
+            self.nuevaMatrizButt.setEnabled(True)
+            self.FilasGroupBox.setEnabled(True)
+            self.ColumnasGroupBox.setEnabled(True)
+            filaC = int(self.filaB.text())-1
+            constante = int(self.constanteB.text())
+            self.matrizReal = multiplicarPorConstante(self.matrizReal, filaC, constante)
+            self.actualizarMatrizUI(self.matrizReal)
+        except:
+            self.showMessageBox("Error", "Imposible realizar")
 
-
-
+    def showMessageBox(self, title, message):
+        msgBox = QMessageBox()
+        msgBox.setIcon(QMessageBox.Warning)
+        msgBox.setWindowTitle(title)
+        msgBox.setText(message)
+        msgBox.setStandardButtons(QMessageBox.Ok)
+        msgBox.exec_()
 
     def home(self):
         self.FIL1COL1.children()
@@ -727,7 +750,7 @@ class Ui_TareaAlgebra(object):
                             [self.FIL5COL1,self.FIL5COL2,self.FIL5COL3,self.FIL5COL4,self.FIL5COL5]]
         self.nuevaMatrizButt.clicked.connect(self.setEnableMatriz)
         self.RealizarTipoA.clicked.connect(self.tipoA)
-        self.RealizarTipoB.clicked.connect(self.setEnableMatriz)
+        self.RealizarTipoB.clicked.connect(self.tipoB)
         self.RealizarTipoC.clicked.connect(self.setEnableMatriz)
 
 
