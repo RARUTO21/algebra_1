@@ -9,7 +9,7 @@ from fractions import Fraction
 # se mantiene la matriz entonces es solo de pasar el B
 # a restar, quedaría así: X=(A^-1)C-B
 orden = 0
-
+#a
 
 def sistemaMatricial(matrizA, matrizB, matrizC):
     global orden
