@@ -8,10 +8,10 @@
 
 from fractions import Fraction
 
+from PyQt5 import QtCore, QtWidgets, QtGui
 from PyQt5.QtWidgets import *
 
 from OperacionesElementales import *
-from output2 import *
 
 
 class Ui_TareaAlgebra(object):
@@ -718,7 +718,7 @@ class Ui_TareaAlgebra(object):
             self.matrizReal = intercambiarFilas(self.matrizReal, filaCambio1, filaCambio2)
             self.actualizarMatrizUI(self.matrizReal)
         except:
-            cargarError()
+            self.showMessageBox("Error", "Imposible realizar")
 
     def tipoB(self):
         try:
@@ -726,16 +726,20 @@ class Ui_TareaAlgebra(object):
             self.nuevaMatrizButt.setEnabled(True)
             self.FilasGroupBox.setEnabled(True)
             self.ColumnasGroupBox.setEnabled(True)
-            self.generarMatrizReal()
             filaC = int(self.filaB.text())-1
             constante = int(self.constanteB.text())
             self.matrizReal = multiplicarPorConstante(self.matrizReal, filaC, constante)
             self.actualizarMatrizUI(self.matrizReal)
         except:
-            self.clicked()
+            self.showMessageBox("Error", "Imposible realizar")
 
-    def clicked(self):
-        QMessageBox.about(self, "My message box", "Text1 = %s, Text2 = %s" % (self.edit1.text(), self.edit2.text()))
+    def showMessageBox(self, title, message):
+        msgBox = QMessageBox()
+        msgBox.setIcon(QMessageBox.Warning)
+        msgBox.setWindowTitle(title)
+        msgBox.setText(message)
+        msgBox.setStandardButtons(QMessageBox.Ok)
+        msgBox.exec_()
 
     def home(self):
         self.FIL1COL1.children()
