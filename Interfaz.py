@@ -10,7 +10,6 @@ from fractions import Fraction
 
 from PyQt5 import QtCore, QtWidgets, QtGui
 from PyQt5.QtWidgets import *
-
 from OperacionesElementales import *
 
 
@@ -697,6 +696,9 @@ class Ui_TareaAlgebra(object):
                 tmp = self.matrizActiva[i][j].children()
                 print(int(tmp[2].text()),int(tmp[0].text()))
                 self.matrizReal[i].insert(j, Fraction(int(tmp[2].text()),int(tmp[0].text())))
+        for i in self.matrizReal:
+            if(len(i)==0):
+                self.matrizReal.remove(i)
 
     def actualizarMatrizUI(self, matriz):
         for i in range(0,self.filas):
@@ -722,6 +724,7 @@ class Ui_TareaAlgebra(object):
 
     def tipoB(self):
         try:
+            self.generarMatrizReal()
             self.resetMatriz(False)
             self.nuevaMatrizButt.setEnabled(True)
             self.FilasGroupBox.setEnabled(True)
@@ -729,6 +732,21 @@ class Ui_TareaAlgebra(object):
             filaC = int(self.filaB.text())-1
             constante = int(self.constanteB.text())
             self.matrizReal = multiplicarPorConstante(self.matrizReal, filaC, constante)
+            self.actualizarMatrizUI(self.matrizReal)
+        except:
+            self.showMessageBox("Error", "Imposible realizar")
+
+    def tipoC(self):
+        try:
+            self.generarMatrizReal()
+            self.resetMatriz(False)
+            self.nuevaMatrizButt.setEnabled(True)
+            self.FilasGroupBox.setEnabled(True)
+            self.ColumnasGroupBox.setEnabled(True)
+            filaS = int(self.filaC1.text())-1
+            filaC = int(self.filaC2.text())-1
+            constante = int(self.constanteC.text())
+            self.matrizReal = sumaDeFilas(self.matrizReal, filaS, filaC, constante)
             self.actualizarMatrizUI(self.matrizReal)
         except:
             self.showMessageBox("Error", "Imposible realizar")
@@ -751,7 +769,7 @@ class Ui_TareaAlgebra(object):
         self.nuevaMatrizButt.clicked.connect(self.setEnableMatriz)
         self.RealizarTipoA.clicked.connect(self.tipoA)
         self.RealizarTipoB.clicked.connect(self.tipoB)
-        self.RealizarTipoC.clicked.connect(self.setEnableMatriz)
+        self.RealizarTipoC.clicked.connect(self.tipoC)
 
 
 if __name__ == "__main__":

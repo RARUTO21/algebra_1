@@ -1,1 +1,1 @@
-[[Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)], [Fraction(7, 5), Fraction(9, 5), Fraction(8, 5)], [Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)]] Operación elemental del tipo A, se cambio la fila 0 por fila 1
+Tipo C
