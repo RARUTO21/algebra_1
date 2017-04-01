@@ -10,8 +10,11 @@ from fractions import Fraction
 
 from PyQt5 import QtCore, QtWidgets, QtGui
 from PyQt5.QtWidgets import *
-
+from crearSecuenciaResultados import matrizToString, writeToFile
 from OperacionesElementales import *
+import sys
+
+from registroLog import *
 
 
 class Ui_TareaAlgebra(object):
@@ -21,6 +24,7 @@ class Ui_TareaAlgebra(object):
     matrizReal = []
     filas = 5
     columnas = 5
+    primeraMat = True
 
     def setupUi(self, TareaAlgebra):
         TareaAlgebra.setObjectName("TareaAlgebra")
@@ -636,11 +640,13 @@ class Ui_TareaAlgebra(object):
 
 
     def resetMatriz(self, bool):
+        self.primeraMat = True
         for fila in self.matrizEnInterfaz:
             for columna in fila:
                 columna.setEnabled(bool)
 
     def setEnableMatriz(self):
+        self.nuevoLog()
         self.resetMatriz(True)
         matriz = self.matrizEnInterfaz
         numCol = 5
@@ -679,6 +685,7 @@ class Ui_TareaAlgebra(object):
         self.RealizarTipoC.setEnabled(True)
         self.FilasGroupBox.setEnabled(False)
         self.ColumnasGroupBox.setEnabled(False)
+        self.sResutadosButt.setEnabled(True)
         self.setMatrizActiva()
 
     def setMatrizActiva(self):
@@ -718,6 +725,7 @@ class Ui_TareaAlgebra(object):
             self.generarMatrizReal()
             filaCambio1 = int(self.filaA1.text())-1
             filaCambio2 = int(self.filaA2.text())-1
+            self.guardarPrimMat()
             self.matrizReal = intercambiarFilas(self.matrizReal, filaCambio1, filaCambio2)
             self.actualizarMatrizUI(self.matrizReal)
         except:
@@ -732,6 +740,7 @@ class Ui_TareaAlgebra(object):
             self.ColumnasGroupBox.setEnabled(True)
             filaC = int(self.filaB.text())-1
             constante = int(self.constanteB.text())
+            self.guardarPrimMat()
             self.matrizReal = multiplicarPorConstante(self.matrizReal, filaC, constante)
             self.actualizarMatrizUI(self.matrizReal)
         except:
@@ -747,6 +756,7 @@ class Ui_TareaAlgebra(object):
             filaS = int(self.filaC1.text())-1
             filaC = int(self.filaC2.text())-1
             constante = int(self.constanteC.text())
+            self.guardarPrimMat()
             self.matrizReal = sumaDeFilas(self.matrizReal, filaS, filaC, constante)
             self.actualizarMatrizUI(self.matrizReal)
         except:
@@ -771,10 +781,27 @@ class Ui_TareaAlgebra(object):
         self.RealizarTipoA.clicked.connect(self.tipoA)
         self.RealizarTipoB.clicked.connect(self.tipoB)
         self.RealizarTipoC.clicked.connect(self.tipoC)
+        self.sResutadosButt.clicked.connect(self.mostrarLog)
+
+    def guardarPrimMat(self):
+        if self.primeraMat:
+            writeToFile(matrizToString(self.matrizReal))
+            self.primeraMat = False
+
+
+    def mostrarLog(self):
+        #Creando ui del Log
+        self.logV = Log(self)
+
+    def nuevoLog(self):
+        fileHandle = open("Resultados.txt", "w+")
+        fileHandle.write("<-----------------------------------------------------  Inicio ------------------------------------------------------>\n\n")
+        fileHandle.close()
+
 
 
 if __name__ == "__main__":
-    import sys
+
     app = QtWidgets.QApplication(sys.argv)
     TareaAlgebra = QtWidgets.QMainWindow()
     ui = Ui_TareaAlgebra()

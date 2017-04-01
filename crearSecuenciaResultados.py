@@ -1,4 +1,5 @@
 from claseOperacionElemental import *
+from fractions import Fraction
 
 def writeToFile(text):
     print("Abriendo archivo..." + "\n")
@@ -11,8 +12,10 @@ def guardarResultados(matriz, operacionElemental):
     tmp = ""
     print("Guardando resultados...\n")
     if(type(operacionElemental) is TipoA):
-           tmp += str(matriz)+ " Operación elemental del tipo A, se cambio la fila "+str(
-               operacionElemental.filaA)+" por fila "+str(operacionElemental.filaB)
+           tmp += "---->\tf"+\
+                  str(operacionElemental.filaA)+" <--> f "+\
+                  str(operacionElemental.filaB)+"\t----->\n\n"+\
+                  matrizToString(matriz)
     elif(type(operacionElemental) is TipoB):
         #tmp += str(matriz) + " Operación elemental del tipo B, se multiplicó la fila " + str(
             #operacionElemental.filaC) + " por constante " + str(operacionElemental.cosntanteA)
@@ -27,5 +30,20 @@ def guardarResultados(matriz, operacionElemental):
     writeToFile(tmp)
 
 def matrizToString(matriz):
-    tmp = str(matriz)
+    tmp = ""
+    for i in range(0,len(matriz)):
+        for j in range(0, len(matriz[i])):
+            num = Fraction(matriz[i][j])
+            print(str(num.numerator) + "\t")
+            tmp+=(str(num.numerator) + "\t")
+        tmp+="\n"
+        for j in range(0, len(matriz[i])):
+            tmp+="---\t"
+        tmp+="\n"
+        for j in range(0, len(matriz[i])):
+            num = Fraction(matriz[i][j])
+            print(str(num.denominator)+"\t")
+            tmp+=(str(num.denominator)+"\t")
+        tmp += "\n\n"
+    print(tmp)
     return tmp
