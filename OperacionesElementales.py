@@ -18,7 +18,7 @@ def multiplicarPorConstante(matriz, filaC, constante):
     return matriz
 
 def sumaDeFilas(matriz, filaS, filaC, constante):
-    op = TipoC(filaS,filaC, constante)
+    op = TipoC(filaS, filaC, constante)
     fila1 = matriz[filaS]
     fila2 = matriz[filaC]
     for i in range(0, len(matriz[0])):

@@ -640,12 +640,12 @@ class Ui_TareaAlgebra(object):
 
 
     def resetMatriz(self, bool):
-        self.primeraMat = True
         for fila in self.matrizEnInterfaz:
             for columna in fila:
                 columna.setEnabled(bool)
 
     def setEnableMatriz(self):
+        self.primeraMat = True
         self.nuevoLog()
         self.resetMatriz(True)
         matriz = self.matrizEnInterfaz
@@ -784,7 +784,7 @@ class Ui_TareaAlgebra(object):
         self.sResutadosButt.clicked.connect(self.mostrarLog)
 
     def guardarPrimMat(self):
-        if self.primeraMat:
+        if self.primeraMat==True:
             writeToFile(matrizToString(self.matrizReal))
             self.primeraMat = False
 
@@ -795,7 +795,7 @@ class Ui_TareaAlgebra(object):
 
     def nuevoLog(self):
         fileHandle = open("Resultados.txt", "w+")
-        fileHandle.write("<-----------------------------------------------------  Inicio ------------------------------------------------------>\n\n")
+        fileHandle.write("<--------------------------------------------------  Inicio --------------------------------------------------->\n\n")
         fileHandle.close()
 
 
