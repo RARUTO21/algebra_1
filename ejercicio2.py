@@ -591,6 +591,7 @@ class Ui_ventanita(object):
         self.grpBox54.setTitle(_translate("ventanita", "   (5,4)"))
         self.grpBox51.setTitle(_translate("ventanita", "   (5,1)"))
 
+
     def mostrarMatriz(self):
         matrixIndex = self.cboMatriz.currentIndex()
         vista =   [
@@ -622,7 +623,6 @@ class Ui_ventanita(object):
         print("Indice del orden: ", self.cboOrden.currentIndex())
         print("Len de las matrices A, B, C",len(matrizA),len(matrizB),len(matrizC))
         print("Len de valores: ", len(valores))
-        print("Len de vista: ",len(vista))
 
         for i in range(0,int(self.cboOrden.currentIndex()+2)):
             for j,k in zip(vista[i],valores[i]):
@@ -642,7 +642,7 @@ class Ui_ventanita(object):
         for i in range(0,orderIndex+2):
             for j in vista[i]:
                 try:
-                    if type(eval(j[0].text())) != int or type(eval(j[1].text())) != int or j[1].text() == "0":
+                    if type(eval(j[0].text())) != int or type(eval(j[1].text())) != int or j[1].text() == "0" or eval(j[1].text()) < 0:
                         return False
                 except:
                         return False
@@ -658,11 +658,12 @@ class Ui_ventanita(object):
 
             self.cboMatriz.addItem("X")
             self.cboMatriz.setCurrentIndex(3)
+
             self.btnGuardarCambios.setEnabled(False)
-            self.btnCalcularX.setEnabled(False)
-            self.btnDefinirOrden.setEnabled(True)
-            self.cboOrden.setEnabled(True)
-            self.cboOrden.setCurrentIndex(0)
+            #self.btnCalcularX.setEnabled(False)
+            self.btnDefinirOrden.setEnabled(False)
+            self.cboOrden.setEnabled(False)
+            #self.cboOrden.setCurrentIndex(0)
 
             cajas = [[self.grpBox11],
                      [self.grpBox12, self.grpBox21, self.grpBox22],
@@ -676,9 +677,22 @@ class Ui_ventanita(object):
                 for j in i:
                     j.setEnabled(False)
 
+            #self.btnDefinirOrden.clicked.connect(self.inicializarMatrices)
+            self.btnCalcularX.setText("Resetear")
+            self.btnCalcularX.clicked.connect(self.resetear)
+            self.cboMatriz.setEnabled(True)
+            self.btnCalcularX.setEnabled(True)
+
 
         else:
             self.txaResultado.setText("Error al calcular la matriz X: \nLa matriz A no tiene inversa.")
+            self.cboOrden.setEnabled(False)
+            self.btnDefinirOrden.setEnabled(False)
+            self.cboMatriz.setEnabled(True)
+            self.btnGuardarCambios.setEnabled(True)
+            self.btnCalcularX.setEnabled(True)
+            self.btnCalcularX.setText("Calcular")
+            self.btnCalcularX.clicked.connect(self.calcularMatrizX)
 
     def getErroresCasillas(self):
         matrixIndex = self.cboMatriz.currentIndex()
@@ -701,11 +715,19 @@ class Ui_ventanita(object):
             for j in vista[i]:
                 try:
                     if type(eval(j[0].text())) != int or type(eval(j[1].text())) != int:
-                        res += "("+str(i)+","+str(subj)+") inválido \n" # ARREGLAR
+                        res += "Valor inválido \n"
+
                 except:
-                    res += "(" + str(i) + "," + str(subj) + ") inválido \n" # ARREGLAR
+                    res += "Valor inválido \n"
+                try:
+                    if eval(j[1].text()) < 0:
+                        res += "Denominador negativo \n"
+                except:
+                    res += "Valor inválido \n"
+
+
                 if j[1].text() == "0":
-                    res += "("+str()+","+str(subj)+"): denominador 0 \n" # ARREGLAR
+                    res += "Denominador 0 \n"
                 subj += 1
         return res
 
@@ -771,9 +793,6 @@ class Ui_ventanita(object):
         final = []
 
         self.limpiarCasillas()
-        self.cboMatriz.removeItem(3)
-        self.cboMatriz.setCurrentIndex(0)
-
 
         cajas= [[self.grpBox11],
                 [self.grpBox12, self.grpBox21, self.grpBox22],
@@ -786,12 +805,25 @@ class Ui_ventanita(object):
             for j in cajas[i]:
                 j.setEnabled(True)
 
-        #Extra comandos
+
+        #Probar esta picha
+        self.cboMatriz.removeItem(1)
+        self.cboMatriz.removeItem(1)
+        self.cboMatriz.removeItem(1)
+        self.cboMatriz.removeItem(1)
+
+        self.cboMatriz.addItem("B")
+        self.cboMatriz.addItem("C")
+        #=================
+
         self.btnDefinirOrden.setEnabled(False)
         self.cboOrden.setEnabled(False)
         self.btnGuardarCambios.setEnabled(True)
         self.cboMatriz.setEnabled(True)
         self.btnCalcularX.setEnabled(True)
+
+        print("Al inicializar las matrices, el orden definido es: ",self.cboOrden.currentIndex()+2)
+
 
         # Matriz temporal[i]
         temp = [Fraction("1/1")] * int(self.cboOrden.currentIndex() + 2)
@@ -804,6 +836,25 @@ class Ui_ventanita(object):
         print("Current Matrix index: ",self.cboMatriz.currentIndex())
         print("Current Order index: ",self.cboOrden.currentIndex())
         self.mostrarMatriz()
+
+    def resetear(self):
+
+        self.cboMatriz.setCurrentIndex(0)
+        self.cboMatriz.setEnabled(False)
+        self.cboMatriz.removeItem(1)
+        self.cboMatriz.removeItem(1)
+        self.cboMatriz.removeItem(1)
+        self.cboMatriz.removeItem(1)
+
+        self.cboMatriz.addItem("B")
+        self.cboMatriz.addItem("C")
+
+        self.cboOrden.setEnabled(True)
+        self.btnDefinirOrden.setEnabled(True)
+        self.btnCalcularX.setText("Calcular")
+        self.btnCalcularX.clicked.connect(self.calcularMatrizX)
+        self.btnCalcularX.setEnabled(False)
+
 
     def limpiarCasillas(self):
         vista = [
