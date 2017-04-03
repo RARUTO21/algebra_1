@@ -7,8 +7,17 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from SistemaMatricial import *
+import copy
+import numpy as np
+
 
 class Ui_ventanita(object):
+    matrizA = []
+    matrizB = []
+    matrizC = []
+    matrizX = []
+
     def setupUi(self, ventanita):
         ventanita.setObjectName("ventanita")
         ventanita.resize(700, 568)
@@ -496,7 +505,46 @@ class Ui_ventanita(object):
         self.statusBar = QtWidgets.QStatusBar(ventanita)
         self.statusBar.setObjectName("statusBar")
         ventanita.setStatusBar(self.statusBar)
+        # Código para bloquear cosas en el startup
+        self.btnCalcularX.setEnabled(False)
+        self.btnGuardarCambios.setEnabled(False)
+        self.txaResultado.setEnabled(False)
+        self.cboMatriz.setEnabled(False)
 
+        self.grpBox11.setEnabled(False)
+        self.grpBox12.setEnabled(False)
+        self.grpBox13.setEnabled(False)
+        self.grpBox14.setEnabled(False)
+        self.grpBox15.setEnabled(False)
+
+        self.grpBox21.setEnabled(False)
+        self.grpBox22.setEnabled(False)
+        self.grpBox23.setEnabled(False)
+        self.grpBox24.setEnabled(False)
+        self.grpBox25.setEnabled(False)
+
+        self.grpBox31.setEnabled(False)
+        self.grpBox32.setEnabled(False)
+        self.grpBox33.setEnabled(False)
+        self.grpBox34.setEnabled(False)
+        self.grpBox35.setEnabled(False)
+
+        self.grpBox41.setEnabled(False)
+        self.grpBox42.setEnabled(False)
+        self.grpBox43.setEnabled(False)
+        self.grpBox44.setEnabled(False)
+        self.grpBox45.setEnabled(False)
+
+        self.grpBox51.setEnabled(False)
+        self.grpBox52.setEnabled(False)
+        self.grpBox53.setEnabled(False)
+        self.grpBox54.setEnabled(False)
+        self.grpBox55.setEnabled(False)
+        # Código ---------------------------------
+        self.btnDefinirOrden.clicked.connect(self.inicializarMatrices)
+        self.btnGuardarCambios.clicked.connect(self.guardarMatriz)
+        self.cboMatriz.currentIndexChanged.connect(self.mostrarMatriz)
+        self.btnCalcularX.clicked.connect(self.calcularMatrizX)
         self.retranslateUi(ventanita)
         QtCore.QMetaObject.connectSlotsByName(ventanita)
 
@@ -543,6 +591,237 @@ class Ui_ventanita(object):
         self.grpBox54.setTitle(_translate("ventanita", "   (5,4)"))
         self.grpBox51.setTitle(_translate("ventanita", "   (5,1)"))
 
+    def mostrarMatriz(self):
+        matrixIndex = self.cboMatriz.currentIndex()
+        vista =   [
+                        [[self.txtNum11,self.txtDen11]],
+                        [[self.txtNum12,self.txtDen12],[self.txtNum21,self.txtDen21],[self.txtNum22,self.txtDen22]],
+                        [[self.txtNum13,self.txtDen13],[self.txtNum23,self.txtDen23],[self.txtNum31,self.txtDen31],[self.txtNum32,self.txtDen32],[self.txtNum33,self.txtDen33]],
+                        [[self.txtNum14,self.txtDen14],[self.txtNum24,self.txtDen24],[self.txtNum34,self.txtDen34],[self.txtNum41,self.txtDen41],[self.txtNum42,self.txtDen42],[self.txtNum43,self.txtDen43],[self.txtNum44,self.txtDen44]],
+                        [[self.txtNum15,self.txtDen15],[self.txtNum25,self.txtDen25],[self.txtNum35,self.txtDen35],[self.txtNum45,self.txtDen45],[self.txtNum51,self.txtDen51],[self.txtNum52,self.txtDen52],[self.txtNum53,self.txtDen53],[self.txtNum54,self.txtDen54],[self.txtNum55,self.txtDen55]]
+                  ]
+
+        matriz = [matrizA,matrizB,matrizC,matrizX]
+
+        valores = []
+
+        if len(matriz[matrixIndex]) >= 2:
+            valores += [ [[matriz[matrixIndex][0][0].numerator, matriz[matrixIndex][0][0].denominator]] ]
+            valores += [ [[matriz[matrixIndex][0][1].numerator, matriz[matrixIndex][0][1].denominator], [matriz[matrixIndex][1][0].numerator, matriz[matrixIndex][1][0].denominator], [matriz[matrixIndex][1][1].numerator, matriz[matrixIndex][1][1].denominator]] ]
+
+        if len(matriz[matrixIndex]) >= 3:
+            valores += [ [[matriz[matrixIndex][0][2].numerator, matriz[matrixIndex][0][2].denominator], [matriz[matrixIndex][1][2].numerator, matriz[matrixIndex][1][2].denominator], [matriz[matrixIndex][2][0].numerator, matriz[matrixIndex][2][0].denominator], [matriz[matrixIndex][2][1].numerator, matriz[matrixIndex][2][1].denominator], [matriz[matrixIndex][2][2].numerator, matriz[matrixIndex][2][2].denominator]] ]
+
+        if len(matriz[matrixIndex]) >= 4:
+            valores += [ [[matriz[matrixIndex][0][3].numerator, matriz[matrixIndex][0][3].denominator], [matriz[matrixIndex][1][3].numerator, matriz[matrixIndex][1][3].denominator], [matriz[matrixIndex][2][3].numerator, matriz[matrixIndex][2][3].denominator], [matriz[matrixIndex][3][0].numerator, matriz[matrixIndex][3][0].denominator], [matriz[matrixIndex][3][1].numerator, matriz[matrixIndex][3][1].denominator], [matriz[matrixIndex][3][2].numerator, matriz[matrixIndex][3][2].denominator], [matriz[matrixIndex][3][3].numerator, matriz[matrixIndex][3][3].denominator]] ]
+
+        if len(matriz[matrixIndex]) >= 5:
+            valores += [ [[matriz[matrixIndex][0][4].numerator, matriz[matrixIndex][0][4].denominator], [matriz[matrixIndex][1][4].numerator, matriz[matrixIndex][1][4].denominator], [matriz[matrixIndex][2][4].numerator, matriz[matrixIndex][2][4].denominator], [matriz[matrixIndex][3][4].numerator, matriz[matrixIndex][3][4].denominator], [matriz[matrixIndex][4][0].numerator, matriz[matrixIndex][4][0].denominator], [matriz[matrixIndex][4][1].numerator, matriz[matrixIndex][4][1].denominator], [matriz[matrixIndex][4][2].numerator, matriz[matrixIndex][4][2].denominator], [matriz[matrixIndex][4][3].numerator, matriz[matrixIndex][4][3].denominator], [matriz[matrixIndex][4][4].numerator, matriz[matrixIndex][4][4].denominator]] ]
+
+        print("matrixIndex: ", matrixIndex)
+        print("Indice del orden: ", self.cboOrden.currentIndex())
+        print("Len de las matrices A, B, C",len(matrizA),len(matrizB),len(matrizC))
+        print("Len de valores: ", len(valores))
+        print("Len de vista: ",len(vista))
+
+        for i in range(0,int(self.cboOrden.currentIndex()+2)):
+            for j,k in zip(vista[i],valores[i]):
+                j[0].setText(str(k[0]))
+                j[1].setText(str(k[1]))
+
+    def validarCasillas(self):
+        vista = [
+            [[self.txtNum11, self.txtDen11]],
+            [[self.txtNum12, self.txtDen12], [self.txtNum21, self.txtDen21], [self.txtNum22, self.txtDen22]],
+            [[self.txtNum13, self.txtDen13], [self.txtNum23, self.txtDen23], [self.txtNum31, self.txtDen31], [self.txtNum32, self.txtDen32], [self.txtNum33, self.txtDen33]],
+            [[self.txtNum14, self.txtDen14], [self.txtNum24, self.txtDen24], [self.txtNum34, self.txtDen34], [self.txtNum41, self.txtDen41], [self.txtNum42, self.txtDen42], [self.txtNum43, self.txtDen43],[self.txtNum44, self.txtDen44]],
+            [[self.txtNum15, self.txtDen15], [self.txtNum25, self.txtDen25], [self.txtNum35, self.txtDen35], [self.txtNum45, self.txtDen45], [self.txtNum51, self.txtDen51], [self.txtNum52, self.txtDen52], [self.txtNum53, self.txtDen53], [self.txtNum54, self.txtDen54], [self.txtNum55, self.txtDen55]]
+            ]
+        orderIndex = self.cboOrden.currentIndex()
+
+        for i in range(0,orderIndex+2):
+            for j in vista[i]:
+                try:
+                    if type(eval(j[0].text())) != int or type(eval(j[1].text())) != int or j[1].text() == "0":
+                        return False
+                except:
+                        return False
+        return True
+
+    def calcularMatrizX(self):
+        global matrizX
+        if Invertible(matrizA):
+            matrizX = np.array(sistemaMatricial(matrizA, matrizB, matrizC)).reshape(len(sistemaMatricial(matrizA, matrizB, matrizC)), len(sistemaMatricial(matrizA, matrizB, matrizC)[0]))
+            self.txaResultado.setText("El valor de X ahora se muestra en pantalla.")
+            print("El valor de X es: ",matrizX)
+            #Suponiendo que está bien:
+
+            self.cboMatriz.addItem("X")
+            self.cboMatriz.setCurrentIndex(3)
+            self.btnGuardarCambios.setEnabled(False)
+            self.btnCalcularX.setEnabled(False)
+            self.btnDefinirOrden.setEnabled(True)
+            self.cboOrden.setEnabled(True)
+            self.cboOrden.setCurrentIndex(0)
+
+            cajas = [[self.grpBox11],
+                     [self.grpBox12, self.grpBox21, self.grpBox22],
+                     [self.grpBox13, self.grpBox23, self.grpBox31, self.grpBox32, self.grpBox33],
+                     [self.grpBox14, self.grpBox24, self.grpBox34, self.grpBox41, self.grpBox42, self.grpBox43,
+                      self.grpBox44],
+                     [self.grpBox15, self.grpBox25, self.grpBox35, self.grpBox45, self.grpBox51, self.grpBox52,
+                      self.grpBox53, self.grpBox54, self.grpBox55]
+                     ]
+            for i in cajas:
+                for j in i:
+                    j.setEnabled(False)
+
+
+        else:
+            self.txaResultado.setText("Error al calcular la matriz X: \nLa matriz A no tiene inversa.")
+
+    def getErroresCasillas(self):
+        matrixIndex = self.cboMatriz.currentIndex()
+        orderIndex  = self.cboOrden.currentIndex()
+        res = "Error al guardar la matriz "+["A","B","C"][matrixIndex]+": \n"
+        vista = [
+            [[self.txtNum11, self.txtDen11]],
+            [[self.txtNum12, self.txtDen12], [self.txtNum21, self.txtDen21], [self.txtNum22, self.txtDen22]],
+            [[self.txtNum13, self.txtDen13], [self.txtNum23, self.txtDen23], [self.txtNum31, self.txtDen31],
+             [self.txtNum32, self.txtDen32], [self.txtNum33, self.txtDen33]],
+            [[self.txtNum14, self.txtDen14], [self.txtNum24, self.txtDen24], [self.txtNum34, self.txtDen34],
+             [self.txtNum41, self.txtDen41], [self.txtNum42, self.txtDen42], [self.txtNum43, self.txtDen43],
+             [self.txtNum44, self.txtDen44]],
+            [[self.txtNum15, self.txtDen15], [self.txtNum25, self.txtDen25], [self.txtNum35, self.txtDen35],
+             [self.txtNum45, self.txtDen45], [self.txtNum51, self.txtDen51], [self.txtNum52, self.txtDen52],
+             [self.txtNum53, self.txtDen53], [self.txtNum54, self.txtDen54], [self.txtNum55, self.txtDen55]]
+        ]
+        for i in range(0, orderIndex + 2):
+            subj = 1
+            for j in vista[i]:
+                try:
+                    if type(eval(j[0].text())) != int or type(eval(j[1].text())) != int:
+                        res += "("+str(i)+","+str(subj)+") inválido \n" # ARREGLAR
+                except:
+                    res += "(" + str(i) + "," + str(subj) + ") inválido \n" # ARREGLAR
+                if j[1].text() == "0":
+                    res += "("+str()+","+str(subj)+"): denominador 0 \n" # ARREGLAR
+                subj += 1
+        return res
+
+    def guardarMatriz(self):
+
+        if self.validarCasillas():
+
+            matrixIndex = self.cboMatriz.currentIndex()
+            matriz = []
+            if matrixIndex == 0:
+                matriz = matrizA
+            elif matrixIndex == 1:
+                matriz = matrizB
+            else:
+                matriz = matrizC
+
+            if len(matriz)  >= 1:
+                matriz[0][0] = Fraction(self.txtNum11.text()+"/"+self.txtDen11.text())
+
+            if len(matriz) >= 2:
+                matriz[0][1] = Fraction(self.txtNum12.text() + "/" + self.txtDen12.text())
+                matriz[1][0] = Fraction(self.txtNum21.text() + "/" + self.txtDen21.text())
+                matriz[1][1] = Fraction(self.txtNum22.text() + "/" + self.txtDen22.text())
+
+            if len(matriz) >= 3:
+                matriz[0][2] = Fraction(self.txtNum13.text() + "/" + self.txtDen13.text())
+                matriz[1][2] = Fraction(self.txtNum23.text() + "/" + self.txtDen23.text())
+                matriz[2][0] = Fraction(self.txtNum31.text() + "/" + self.txtDen31.text())
+                matriz[2][1] = Fraction(self.txtNum32.text() + "/" + self.txtDen32.text())
+                matriz[2][2] = Fraction(self.txtNum33.text() + "/" + self.txtDen33.text())
+
+            if len(matriz) >= 4:
+                matriz[0][3] = Fraction(self.txtNum14.text() + "/" + self.txtDen14.text())
+                matriz[1][3] = Fraction(self.txtNum24.text() + "/" + self.txtDen24.text())
+                matriz[2][3] = Fraction(self.txtNum34.text() + "/" + self.txtDen34.text())
+                matriz[3][0] = Fraction(self.txtNum41.text() + "/" + self.txtDen41.text())
+                matriz[3][1] = Fraction(self.txtNum42.text() + "/" + self.txtDen42.text())
+                matriz[3][2] = Fraction(self.txtNum43.text() + "/" + self.txtDen43.text())
+                matriz[3][3] = Fraction(self.txtNum44.text() + "/" + self.txtDen44.text())
+
+            if len(matriz) >= 5:
+                matriz[0][4] = Fraction(self.txtNum15.text() + "/" + self.txtDen15.text())
+                matriz[1][4] = Fraction(self.txtNum25.text() + "/" + self.txtDen25.text())
+                matriz[2][4] = Fraction(self.txtNum35.text() + "/" + self.txtDen35.text())
+                matriz[3][4] = Fraction(self.txtNum45.text() + "/" + self.txtDen45.text())
+                matriz[4][0] = Fraction(self.txtNum51.text() + "/" + self.txtDen51.text())
+                matriz[4][1] = Fraction(self.txtNum52.text() + "/" + self.txtDen52.text())
+                matriz[4][2] = Fraction(self.txtNum53.text() + "/" + self.txtDen53.text())
+                matriz[4][3] = Fraction(self.txtNum54.text() + "/" + self.txtDen54.text())
+                matriz[4][4] = Fraction(self.txtNum55.text() + "/" + self.txtDen55.text())
+
+            #Reasignacion de los resultados guardados
+            [matrizA,matrizB,matrizC][matrixIndex] = matriz
+
+            self.txaResultado.setText("La matriz "+["A","B","C"][matrixIndex]+" ha sido guardada correctamente.")
+
+        else: #No se valido alguna casilla
+            self.txaResultado.setText(self.getErroresCasillas())
+
+    def inicializarMatrices(self):
+        global matrizA, matrizB, matrizC, matrizX
+        temp = []
+        final = []
+
+        self.limpiarCasillas()
+        self.cboMatriz.removeItem(3)
+        self.cboMatriz.setCurrentIndex(0)
+
+
+        cajas= [[self.grpBox11],
+                [self.grpBox12, self.grpBox21, self.grpBox22],
+                [self.grpBox13, self.grpBox23, self.grpBox31, self.grpBox32, self.grpBox33],
+                [self.grpBox14, self.grpBox24, self.grpBox34, self.grpBox41, self.grpBox42, self.grpBox43, self.grpBox44],
+                [self.grpBox15, self.grpBox25, self.grpBox35, self.grpBox45, self.grpBox51, self.grpBox52, self.grpBox53, self.grpBox54, self.grpBox55]
+               ]
+
+        for i in range(0,int(self.cboOrden.currentIndex()+2)):
+            for j in cajas[i]:
+                j.setEnabled(True)
+
+        #Extra comandos
+        self.btnDefinirOrden.setEnabled(False)
+        self.cboOrden.setEnabled(False)
+        self.btnGuardarCambios.setEnabled(True)
+        self.cboMatriz.setEnabled(True)
+        self.btnCalcularX.setEnabled(True)
+
+        # Matriz temporal[i]
+        temp = [Fraction("1/1")] * int(self.cboOrden.currentIndex() + 2)
+        res = copy.deepcopy([temp]) * int(self.cboOrden.currentIndex() + 2)
+
+        matrizA = np.array(copy.deepcopy(res)).reshape(len(res),len(res[0]))
+        matrizB = np.array(copy.deepcopy(res)).reshape(len(res),len(res[0]))
+        matrizC = np.array(copy.deepcopy(res)).reshape(len(res),len(res[0]))
+        matrizX = np.array(copy.deepcopy(res)).reshape(len(res), len(res[0]))
+        print("Current Matrix index: ",self.cboMatriz.currentIndex())
+        print("Current Order index: ",self.cboOrden.currentIndex())
+        self.mostrarMatriz()
+
+    def limpiarCasillas(self):
+        vista = [
+            [[self.txtNum11, self.txtDen11]],
+            [[self.txtNum12, self.txtDen12], [self.txtNum21, self.txtDen21], [self.txtNum22, self.txtDen22]],
+            [[self.txtNum13, self.txtDen13], [self.txtNum23, self.txtDen23], [self.txtNum31, self.txtDen31],
+             [self.txtNum32, self.txtDen32], [self.txtNum33, self.txtDen33]],
+            [[self.txtNum14, self.txtDen14], [self.txtNum24, self.txtDen24], [self.txtNum34, self.txtDen34],
+             [self.txtNum41, self.txtDen41], [self.txtNum42, self.txtDen42], [self.txtNum43, self.txtDen43],
+             [self.txtNum44, self.txtDen44]],
+            [[self.txtNum15, self.txtDen15], [self.txtNum25, self.txtDen25], [self.txtNum35, self.txtDen35],
+             [self.txtNum45, self.txtDen45], [self.txtNum51, self.txtDen51], [self.txtNum52, self.txtDen52],
+             [self.txtNum53, self.txtDen53], [self.txtNum54, self.txtDen54], [self.txtNum55, self.txtDen55]]
+        ]
+        for i in vista:
+            for j in i:
+                for k in j:
+                    k.setText("")
 
 if __name__ == "__main__":
     import sys
@@ -552,4 +831,6 @@ if __name__ == "__main__":
     ui.setupUi(ventanita)
     ventanita.show()
     sys.exit(app.exec_())
+
+
 
